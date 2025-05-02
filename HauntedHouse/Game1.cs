@@ -1,8 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-
-namespace HauntedHouse;
+﻿namespace HauntedHouse;
 
 public class Game1 : Game
 {
