@@ -1,5 +1,3 @@
-using Microsoft.Xna.Framework.Content;
-
 namespace HauntedHouse;
 
 public static class Globals

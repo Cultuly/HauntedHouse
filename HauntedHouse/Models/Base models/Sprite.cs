@@ -9,7 +9,7 @@ public class Sprite (Texture2D texture, Vector2 position)
     public float Scale { get; set; } = 1f;
     public Color Color { get; set; }= Color.White;
 
-    public virtual void Update()
+    public virtual void Draw()
     {
         Globals.SpriteBatch.Draw(Texture, Position, null, Color, Rotation, Origin, Scale, SpriteEffects.None, 1);
     }
