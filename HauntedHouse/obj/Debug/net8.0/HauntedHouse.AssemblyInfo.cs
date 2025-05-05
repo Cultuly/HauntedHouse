@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HauntedHouse")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+469582d962b05700fdbf25ccb72617e09a328e2c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+89ad387cc230e8c5f96e16877da5b0999782f18d")]
 [assembly: System.Reflection.AssemblyProductAttribute("HauntedHouse")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HauntedHouse")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
