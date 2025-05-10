@@ -4,6 +4,7 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+    <File>c:/Users/Кирилл/Projects (C#)/2025/Monogame projects/HauntedHouse/HauntedHouse/Content/Bullet.png</File>
     <File>c:/Users/Кирилл/Projects (C#)/2025/Monogame projects/HauntedHouse/HauntedHouse/Content/Ghost.png</File>
     <File>c:/Users/Кирилл/Projects (C#)/2025/Monogame projects/HauntedHouse/HauntedHouse/Content/Tile 1.png</File>
     <File>c:/Users/Кирилл/Projects (C#)/2025/Monogame projects/HauntedHouse/HauntedHouse/Content/Tile 2.png</File>
@@ -12,6 +13,7 @@
     <File>c:/Users/Кирилл/Projects (C#)/2025/Monogame projects/HauntedHouse/HauntedHouse/Content/Tile 5.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

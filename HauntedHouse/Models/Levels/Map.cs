@@ -28,7 +28,7 @@ public class Map
         }
     }
 
-    public void Update()
+    public void Draw()
     {
         for (int y = 0; y < _mapTileSize.Y; y++)
         {
