@@ -12,7 +12,7 @@ public class Map
         List<Texture2D> textures = new(5);
         for (int i = 1; i < 6; i++)
         {
-            textures.Add(Globals.Content.Load<Texture2D>($"tile {i}")); // Загрузка текстур для карты 
+            textures.Add(Globals.Content.Load<Texture2D>($"Tile {i}")); // Загрузка текстур для карты 
         }
 
         Point TileSize = new(textures[0].Width, textures[0].Height);

@@ -7,16 +7,17 @@ public class GameManager
 
     public GameManager()
     {
-        _map = new(); 
+        _map = new();
         var texture = Globals.Content.Load<Texture2D>("Bullet");
-        _player = new (Globals.Content.Load<Texture2D>("Player"));
-        ProjectilesManager.Init(texture);
+        ProjectileManager.Init(texture);
+
+        _player = new(Globals.Content.Load<Texture2D>("Player"));
         GhostManager.Init();
     }
 
-    public void Restart()
+    public void Restart() // Перезапуск
     {
-        ProjectilesManager.Reset();
+        ProjectileManager.Reset();
         GhostManager.Reset();
         _player.Reset();
     }
@@ -24,19 +25,18 @@ public class GameManager
     public void Update()
     {
         InputManager.Update();
-        ProjectilesManager.Update(GhostManager.Ghosts);
         _player.Update(GhostManager.Ghosts);
+        GhostManager.Update(_player);
+        ProjectileManager.Update(GhostManager.Ghosts);
 
-        if (_player.Dead)
-        {
-            Restart();
-        }
+        if (_player.Dead) Restart();
     }
 
     public void Draw()
     {
         _map.Draw();
-        ProjectilesManager.Draw();
+        ProjectileManager.Draw();
         _player.Draw();
+        GhostManager.Draw();
     }
 }

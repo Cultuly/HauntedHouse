@@ -2,43 +2,44 @@ namespace HauntedHouse;
 
 public static class GhostManager
 {
-    public static List<Ghost> Ghosts {get;} = [];
+    public static List<Ghost> Ghosts { get; } = [];
     private static Texture2D _texture;
-    private static float _spawnCooldown; // Время между спавном призраков
+    private static float _spawnCooldown; // Откат таймера спавна
     private static float _spawnTime; // Таймер спавна призраков
-    private static Random _rand;
+    private static Random _random;
     private static int _padding;
 
-    public static void Init()
+    public static void Init() // Метод инициализации для статических классов
     {
         _texture = Globals.Content.Load<Texture2D>("Ghost");
-        _spawnCooldown = 0.5f;
+        _spawnCooldown = 0.5f; // Генерация по 2 призрака в секунду
         _spawnTime = _spawnCooldown;
-        _rand = new();
-        _padding = _texture.Width/2;
+        _random = new();
+        _padding = _texture.Width / 2;
     }
 
-    public static void Reset()
+    public static void Reset() 
     {
         Ghosts.Clear();
-        _spawnTime = _spawnCooldown; // Откат таймера спавна
+        _spawnTime = _spawnCooldown;
     }
 
-    private static Vector2 SetRandomPosition() // Метод появления призраков в рандомной позиции за пределами экрана
+    private static Vector2 SetRandomPosition() // Метод спавна призраков в разных местах за игровым окном
     {
         float width = Globals.Bounds.X; // Ширина экрана
         float height = Globals.Bounds.Y; // Высота экрана
         Vector2 position = new();
 
-        if (_rand.NextDouble() <  width / (width + height))
+        if (_random.NextDouble() <  width / (width + height))
         {
-            position.X = (int)(_rand.NextDouble() * width);
-            position.Y = (int)(_rand.NextDouble() < 0.5 ? -_padding : height + _padding);
+            position.X = (int)(_random.NextDouble() * width);
+            position.Y = (int)(_random.NextDouble() < 0.5 ? -_padding : height + _padding);
         }
+
         else
         {
-            position.Y = (int)(_rand.NextDouble() * height);
-            position.X = (int)(_rand.NextDouble() < 0.5 ? -_padding : width + _padding);
+            position.Y = (int)(_random.NextDouble() * height);
+            position.X = (int)(_random.NextDouble() < 0.5 ? -_padding : width + _padding);
         }
 
         return position;
@@ -54,7 +55,7 @@ public static class GhostManager
         _spawnTime -= Globals.TotalSeconds;
         while (_spawnTime <= 0)
         {
-            _spawnTime += _spawnCooldown;
+            _spawnTime += _spawnCooldown; // Сброс таймера
             AddGhost();
         }
 
@@ -62,14 +63,14 @@ public static class GhostManager
         {
             g.Update(player);
         }
-        Ghosts.RemoveAll((g => g.healthPoints <= 0 )); // Убирает всех призраков чьё хп меньше или равно 0
+        Ghosts.RemoveAll((g) => g.healthPoints <= 0); // Удаление всех призраков со здоровьем <= 0
     }
 
-    public static void Draw() // Отрисовка призраков
+    public static void Draw()
     {
         foreach (var g in Ghosts)
         {
-            g.Draw();
+            g.Draw(); // Отрисовка призраков
         }
     }
 }

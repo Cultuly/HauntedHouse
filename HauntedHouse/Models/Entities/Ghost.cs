@@ -2,30 +2,27 @@ namespace HauntedHouse;
 
 public class Ghost : MovingSprite
 {
-    public int healthPoints {get; private set;} // Счётчик здоровья
+    public int healthPoints { get; private set; } // Очки здоровья призрака
 
-    public Ghost(Texture2D texture, Vector2 position) : base (texture, position)
+    public Ghost(Texture2D texture, Vector2 position) : base(texture, position)
     {
-        healthPoints = 8;
         Speed = 100;
+        healthPoints = 2;
     }
 
-    public void GetDamage( int damage) // Метод получения урона
+    public void TakeDamage(int damage) // Метод получения урона призраком
     {
         healthPoints -= damage;
     }
 
     public void Update(Player player)
     {
-        var toPlayer = player.Position - Position; // Направление к игроку
-        Rotation = (float)Math.Atan2(toPlayer.Y, toPlayer.X);
+        var toPlayer = player.Position - Position;
 
         if (toPlayer.Length() > 4)
         {
             var direction = Vector2.Normalize(toPlayer);
-            Position = direction * Speed * Globals.TotalSeconds;
+            Position += direction * Speed * Globals.TotalSeconds;
         }
     }
-
-    
 }

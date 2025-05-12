@@ -1,0 +1,34 @@
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\bin\Debug\net8.0\Content\Bullet.xnb
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\bin\Debug\net8.0\Content\Ghost.xnb
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\bin\Debug\net8.0\Content\Player.xnb
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\bin\Debug\net8.0\Content\Tile 1.xnb
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\bin\Debug\net8.0\Content\Tile 2.xnb
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\bin\Debug\net8.0\Content\Tile 3.xnb
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\bin\Debug\net8.0\Content\Tile 4.xnb
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\bin\Debug\net8.0\Content\Tile 5.xnb
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\bin\Debug\net8.0\HauntedHouse.exe
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\bin\Debug\net8.0\HauntedHouse.deps.json
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\bin\Debug\net8.0\HauntedHouse.runtimeconfig.json
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\bin\Debug\net8.0\HauntedHouse.dll
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\bin\Debug\net8.0\HauntedHouse.pdb
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\bin\Debug\net8.0\MonoGame.Framework.dll
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\bin\Debug\net8.0\NVorbis.dll
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\bin\Debug\net8.0\runtimes\linux-x64\native\libopenal.so.1
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\bin\Debug\net8.0\runtimes\osx\native\libopenal.1.dylib
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\bin\Debug\net8.0\runtimes\win-x64\native\soft_oal.dll
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\bin\Debug\net8.0\runtimes\win-x86\native\soft_oal.dll
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\bin\Debug\net8.0\runtimes\linux-x64\native\libSDL2-2.0.so.0
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\bin\Debug\net8.0\runtimes\osx\native\libSDL2.dylib
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\bin\Debug\net8.0\runtimes\win-x64\native\SDL2.dll
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\obj\Debug\net8.0\HauntedHouse.csproj.AssemblyReference.cache
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\obj\Debug\net8.0\HauntedHouse.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\obj\Debug\net8.0\HauntedHouse.AssemblyInfoInputs.cache
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\obj\Debug\net8.0\HauntedHouse.AssemblyInfo.cs
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\obj\Debug\net8.0\HauntedHouse.csproj.CoreCompileInputs.cache
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\obj\Debug\net8.0\HauntedHouse.sourcelink.json
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\obj\Debug\net8.0\HauntedH.172F00AC.Up2Date
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\obj\Debug\net8.0\HauntedHouse.dll
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\obj\Debug\net8.0\refint\HauntedHouse.dll
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\obj\Debug\net8.0\HauntedHouse.pdb
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\obj\Debug\net8.0\HauntedHouse.genruntimeconfig.cache
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\obj\Debug\net8.0\ref\HauntedHouse.dll
