@@ -5,6 +5,7 @@ public class Player : MovingSprite
     public Weapon Weapon { get; set; }
     private Weapon _weapon1;
     private Weapon _weapon2;
+    public int Experience { get; private set; }
     public bool Dead { get; private set; } // Флаг смерти игрока
 
     public Player(Texture2D tex) : base(tex, GetStartPosition())
@@ -17,6 +18,11 @@ public class Player : MovingSprite
         return new(Globals.Bounds.X / 2, Globals.Bounds.Y / 2);
     }
 
+    public void GetExperience(int experience) // Метод получения опыта игроком
+    {
+        Experience += experience;
+    }
+
     public void Reset() // Перезапуск
     {
         _weapon1 = new Rifle();
@@ -24,6 +30,7 @@ public class Player : MovingSprite
         Dead = false;
         Weapon = _weapon1;
         Position = GetStartPosition();
+        Experience = 0;
     }
 
     public void SwapWeapon() // Метод смены оружия

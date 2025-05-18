@@ -13,6 +13,7 @@ public class Ghost : MovingSprite
     public void TakeDamage(int damage) // Метод получения урона призраком
     {
         healthPoints -= damage;
+        if (healthPoints <= 0) ExperienceManager.AddExperience(Position); // После смерти призраки оставляют очки опыта в виде эктоплазмы
     }
 
     public void Update(Player player)

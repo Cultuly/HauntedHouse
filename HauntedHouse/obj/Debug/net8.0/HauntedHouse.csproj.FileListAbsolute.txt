@@ -32,3 +32,5 @@ C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedH
 C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\obj\Debug\net8.0\HauntedHouse.pdb
 C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\obj\Debug\net8.0\HauntedHouse.genruntimeconfig.cache
 C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\obj\Debug\net8.0\ref\HauntedHouse.dll
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\bin\Debug\net8.0\Content\Ectoplasm.xnb
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\bin\Debug\net8.0\Content\Score.xnb
