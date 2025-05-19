@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>C:/Users/Кирилл/Projects (C#)/2025/Monogame projects/HauntedHouse/HauntedHouse/Content/Score.spritefont</SourceFile>
-  <SourceTime>2025-05-18T15:52:11.9830371+05:00</SourceTime>
+  <SourceTime>2025-05-19T12:58:00.8850735+05:00</SourceTime>
   <DestFile>C:/Users/Кирилл/Projects (C#)/2025/Monogame projects/HauntedHouse/HauntedHouse/Content/bin/DesktopGL/Content/Score.xnb</DestFile>
-  <DestTime>2025-05-18T15:52:14.1728067+05:00</DestTime>
+  <DestTime>2025-05-19T12:58:06.6971571+05:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2024-08-16T22:05:56+05:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>

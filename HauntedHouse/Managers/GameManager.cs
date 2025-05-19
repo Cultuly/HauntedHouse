@@ -14,6 +14,7 @@ public class GameManager
 
         _player = new(Globals.Content.Load<Texture2D>("Player"));
         GhostManager.Init();
+        MenuManager.Init();
     }
 
     public void Restart() // Перезапуск
@@ -27,20 +28,42 @@ public class GameManager
     public void Update() // Обновляет логику всех элементов
     {
         InputManager.Update();
-        ExperienceManager.Update(_player);
-        _player.Update(GhostManager.Ghosts);
-        GhostManager.Update(_player);
-        ProjectileManager.Update(GhostManager.Ghosts);
+        MenuManager.Update();
+        
+        if (MenuManager.CurrentState == GameState.InGame)
+        {
+            ExperienceManager.Update(_player);
+            _player.Update(GhostManager.Ghosts);
+            GhostManager.Update(_player);
+            ProjectileManager.Update(GhostManager.Ghosts);
 
-        if (_player.Dead) Restart();
+            if (_player.Dead) 
+            {
+                Restart();
+                MenuManager.ReturnToMainMenu();
+            }
+        }
     }
 
     public void Draw() // Отрисовывает все элементы в необходимом порядке
     {
-        _map.Draw();
-        ExperienceManager.Draw();
-        ProjectileManager.Draw();
-        _player.Draw();
-        GhostManager.Draw();
+        if (MenuManager.CurrentState == GameState.MainMenu)
+        {
+            _map.Draw();
+            MenuManager.Draw();
+        }
+        else
+        {
+            _map.Draw();
+            ExperienceManager.Draw();
+            ProjectileManager.Draw();
+            _player.Draw();
+            GhostManager.Draw();
+            
+            if (MenuManager.CurrentState == GameState.Paused)
+            {
+                MenuManager.Draw();
+            }
+        }
     }
 }

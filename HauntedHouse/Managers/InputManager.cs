@@ -4,6 +4,8 @@ public static class InputManager
 {
     private static MouseState _lastMouseState;
     private static KeyboardState _lastKeyboardState;
+    public static KeyboardState LastKeyboardState => _lastKeyboardState;
+    public static MouseState LastMouseState => _lastMouseState;
     private static Vector2 _direction;
     public static Vector2 Direction => _direction;
     public static Vector2 MousePosition => Mouse.GetState().Position.ToVector2();

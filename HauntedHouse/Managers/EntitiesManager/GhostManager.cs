@@ -12,7 +12,8 @@ public static class GhostManager
     public static void Init() // Метод инициализации для статических классов
     {
         _texture = Globals.Content.Load<Texture2D>("Ghost");
-        _spawnCooldown = 0.5f; // Генерация по 2 призрака в секунду
+        _spawnCooldown = 0.5f; // Спавн по 2 призрака в секунду по умолчанию
+        UpdateSpawnRate(); // Спавнрейт призраков привязанный к сложности
         _spawnTime = _spawnCooldown;
         _random = new();
         _padding = _texture.Width / 2;
@@ -21,7 +22,12 @@ public static class GhostManager
     public static void Reset() 
     {
         Ghosts.Clear();
+        UpdateSpawnRate();
         _spawnTime = _spawnCooldown;
+    }
+    private static void UpdateSpawnRate() // Метод изменения спавнрейта в зависимости от выбраной сложности
+    {
+        _spawnCooldown = 0.5f * DifficultySettings.GetGhostSpawnRateMultiplier();
     }
 
     private static Vector2 SetRandomPosition() // Метод спавна призраков в разных местах за игровым окном
@@ -63,7 +69,7 @@ public static class GhostManager
         {
             g.Update(player);
         }
-        Ghosts.RemoveAll((g) => g.healthPoints <= 0); // Удаление всех призраков со здоровьем <= 0
+        Ghosts.RemoveAll((g) => g.healthPoints <= 0); // Удаление всех призраков со здоровьем меньше ноля
     }
 
     public static void Draw()

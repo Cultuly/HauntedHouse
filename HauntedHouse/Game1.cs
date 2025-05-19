@@ -34,7 +34,9 @@ public class Game1 : Game
 
     protected override void Update(GameTime gameTime)
     {
-        if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+        // Выход из игры только если игра в состоянии паузы и нажат ESC
+        if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || 
+            (Keyboard.GetState().IsKeyDown(Keys.Escape) && MenuManager.CurrentState == GameState.MainMenu))
             Exit();
 
         Globals.Update(gameTime);

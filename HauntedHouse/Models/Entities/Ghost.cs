@@ -6,14 +6,14 @@ public class Ghost : MovingSprite
 
     public Ghost(Texture2D texture, Vector2 position) : base(texture, position)
     {
-        Speed = 100;
-        healthPoints = 2;
+        Speed = 100 * DifficultySettings.GetGhostSpeedMultiplier(); // Скорость меняется от модификатора в зависимости от уровня сложности
+        healthPoints = DifficultySettings.GetGhostHealthPoints(); // Здоровье призрака меняется от модификатора в зависимости от уровня сложности
     }
 
     public void TakeDamage(int damage) // Метод получения урона призраком
     {
         healthPoints -= damage;
-        if (healthPoints <= 0) ExperienceManager.AddExperience(Position); // После смерти призраки оставляют очки опыта в виде эктоплазмы
+        if (healthPoints <= 0) ExperienceManager.AddExperience(Position); // После смерти призраки оставляют очки опыта (эктоплазма)
     }
 
     public void Update(Player player)
