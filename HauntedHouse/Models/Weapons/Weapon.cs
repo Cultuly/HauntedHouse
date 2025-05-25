@@ -4,10 +4,12 @@ public abstract class Weapon
 {
     protected float cooldown; // Время между выстрелами
     protected float cooldownLeft;
-    protected int maxAmmo; // Максимально число патрон
+    protected int maxAmmo; // Максимальное число патрон
+    public int MaxAmmo => maxAmmo;
     public int Ammo { get; protected set; } // Текущее число патрон
     protected float reloadTime; // Время перезарядки
     public bool Reloading { get; protected set; } // Флаг перезарядки
+    protected int baseDamage;
 
     protected Weapon()
     {
@@ -25,14 +27,19 @@ public abstract class Weapon
 
     protected abstract void CreateProjectiles(Player player); // Создание перезарядки
 
-    public virtual void Fire(Player player) // Стрельба
+    protected int GetDamageWithLevelMultiplier() // Множитель урона для оружия от уровня
+    {
+        return (int)(baseDamage * LevelSystem.GetDamageMultiplier());
+    }
+
+    public virtual void Fire(Player player) // Обработка стрельбы
     {
         if (cooldownLeft > 0 || Reloading) return;
 
         Ammo--;
         if (Ammo > 0)
         {
-            cooldownLeft = cooldown; // Сброс таймера
+            cooldownLeft = cooldown;
         }
         else
         {

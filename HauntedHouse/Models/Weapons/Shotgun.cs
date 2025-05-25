@@ -10,6 +10,7 @@ public class Shotgun : Weapon
         maxAmmo = 8;
         Ammo = maxAmmo;
         reloadTime = 3f;
+        baseDamage = 2; // Урон дробовика
     }
 
     protected override void CreateProjectiles(Player player) // Создание снаряда для дробовика
@@ -20,7 +21,8 @@ public class Shotgun : Weapon
             Rotation = player.Rotation - (3 * AngleOfRotation), // Максимальный угол (22.5 градуса)
             Lifespan = 0.5f,
             Speed = 800,
-            Damage = 2
+            Damage = GetDamageWithLevelMultiplier(),
+            IsEnemyProjectile = false
         };
 
         for (int i = 0; i < 5; i++)

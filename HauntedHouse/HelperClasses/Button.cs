@@ -18,7 +18,7 @@ public class Button
         _onClick = onClick;
         
         Vector2 size = _font.MeasureString(text);
-        Vector2 origin = size * 0.5f; // Отрисовка текста по центру
+        Vector2 origin = size * 0.5f; // Отрисовка текста (по центру)
         _hitbox = new Rectangle((int)(_position.X - origin.X), (int)(_position.Y - origin.Y), (int)size.X, (int)size.Y);
     }
     
@@ -37,15 +37,15 @@ public class Button
     
     public void Draw()
     {
-        Color textColor = Color.White; // Цвет кнопки по умолчанию
-        float scale = 1.0f; // Размер шрифта кнопки по умолчанию
+        Color textColor = Color.White; // Цвет кнопки (по умолчанию)
+        float scale = 1.0f; // Шрифт кнопки (по умолчанию)
         
-        if (IsSelected) // Изменение цвета кнопки по клику на неё
+        if (IsSelected) // Изменение цвета кнопки (по клику на неё)
         {
             textColor = Color.Yellow;
             scale = 1.0f;
         }
-        else if (_isHovered) // Изменение цвета кнопки при наведении на неё
+        else if (_isHovered) // Изменение цвета кнопки (при наведении на неё)
         {
             textColor = Color.LightGray;
             scale = 1.0f;

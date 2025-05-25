@@ -2,52 +2,74 @@ namespace HauntedHouse;
 
 public static class ProjectileManager
 {
-    private static Texture2D _texture;
+    private static Texture2D _playerProjectileTexture;
+    private static Texture2D _ghostProjectileTexture;
     public static List<Projectile> Projectiles { get; } = [];
+    private const float CollisionRadius = 20f; // Радиус столкновения для снарядов
 
-    public static void Init(Texture2D texture) // Инициализация для статических классов
+    public static void Init(Texture2D playerProjectileTexture, Texture2D ghostProjectileTexture) // Инициализация (для статических классов)
     {
-        _texture = texture;
+        _playerProjectileTexture = playerProjectileTexture;
+        _ghostProjectileTexture = ghostProjectileTexture;
     }
 
-    public static void Reset() 
+    public static void Reset() // Перезапуск
     {
-        Projectiles.Clear();
+        Projectiles.Clear(); // Убирает все снаряды
     }
 
-    public static void AddProjectile(ProjectileData data) // Создание снаряда
+    public static void AddProjectile(ProjectileData data) // Создаёт снаряды
     {
-        Projectiles.Add(new(_texture, data));
+        var texture = data.IsEnemyProjectile ? _ghostProjectileTexture : _playerProjectileTexture;
+        Projectiles.Add(new(texture, data));
     }
 
-    public static void Update(List<Ghost> ghosts)
+    public static void Update(Player player, List<Ghost> ghosts)
     {
-        foreach (var p in Projectiles)
+        for (int i = Projectiles.Count - 1; i >= 0; i--)
         {
-            p.Update();
-            foreach (var g in ghosts)
-            {
-                if (g.healthPoints <= 0)
-                {
-                    continue;
-                }
+            var projectile = Projectiles[i];
+            projectile.Update();
 
-                if ((p.Position - g.Position).Length() < 20)
+            // Обработка получения урона (игроком от противников)
+            if (projectile.IsEnemyProjectile)
+            {
+                // Обработка расстояния от снаряда до игрока
+                if ((projectile.Position - player.Position).Length() < CollisionRadius)
                 {
-                    g.TakeDamage(p.Damage);
-                    p.Destroy();
-                    break;
+                    player.TakeDamage(projectile.Damage); 
+                    projectile.Destroy();
                 }
             }
+            else
+            {
+                // Обработка получения урона противниками
+                foreach (var ghost in ghosts)
+                {
+                    if (ghost.healthPoints <= 0) continue;
+
+                    if ((projectile.Position - ghost.Position).Length() < CollisionRadius)
+                    {
+                        ghost.TakeDamage(projectile.Damage);
+                        projectile.Destroy();
+                        break;
+                    }
+                }
+            }
+
+            // Убирает попавшие или промахнувшиеся снаряды 
+            if (projectile.Lifespan <= 0)
+            {
+                Projectiles.RemoveAt(i);
+            }
         }
-        Projectiles.RemoveAll((p) => p.Lifespan <= 0); // Уничтожение всех попавших снарядов
     }
 
     public static void Draw()
     {
-        foreach (var p in Projectiles)
+        foreach (var projectile in Projectiles)
         {
-            p.Draw(); // Отрисовка снарядов
+            projectile.Draw(); // Отрисовка снарядов
         }
     }
 }

@@ -5,6 +5,7 @@ public class Projectile : MovingSprite
     public Vector2 Direction { get; set; }
     public float Lifespan { get; private set; }
     public int Damage { get; }
+    public bool IsEnemyProjectile { get; }
 
     public Projectile(Texture2D texture, ProjectileData data) : base(texture, data.Position)
     {
@@ -13,6 +14,7 @@ public class Projectile : MovingSprite
         Direction = new((float)Math.Cos(Rotation), (float)Math.Sin(Rotation)); 
         Lifespan = data.Lifespan;
         Damage = data.Damage;
+        IsEnemyProjectile = data.IsEnemyProjectile;
     }
 
     public void Destroy() // Уничтожение снарядов

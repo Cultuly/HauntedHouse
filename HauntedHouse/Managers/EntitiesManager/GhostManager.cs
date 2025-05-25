@@ -9,28 +9,28 @@ public static class GhostManager
     private static Random _random;
     private static int _padding;
 
-    public static void Init() // Метод инициализации для статических классов
+    public static void Init() // Инициализация (для статических классов)
     {
         _texture = Globals.Content.Load<Texture2D>("Ghost");
-        _spawnCooldown = 0.5f; // Спавн по 2 призрака в секунду по умолчанию
-        UpdateSpawnRate(); // Спавнрейт призраков привязанный к сложности
+        _spawnCooldown = 0.5f; // Спавн по 2 призрака в секунду (по умолчанию)
+        UpdateSpawnRate(); // Спавнрейт призраков (привязанный к сложности)
         _spawnTime = _spawnCooldown;
         _random = new();
         _padding = _texture.Width / 2;
     }
 
-    public static void Reset() 
+    public static void Reset() // Перезапуск
     {
         Ghosts.Clear();
         UpdateSpawnRate();
         _spawnTime = _spawnCooldown;
     }
-    private static void UpdateSpawnRate() // Метод изменения спавнрейта в зависимости от выбраной сложности
+    private static void UpdateSpawnRate() // Изменение спавнрейта (в зависимости от выбраной сложности)
     {
         _spawnCooldown = 0.5f * DifficultySettings.GetGhostSpawnRateMultiplier();
     }
 
-    private static Vector2 SetRandomPosition() // Метод спавна призраков в разных местах за игровым окном
+    private static Vector2 SetRandomPosition() // Спавн призраков в разных местах (за игровым окном)
     {
         float width = Globals.Bounds.X; // Ширина экрана
         float height = Globals.Bounds.Y; // Высота экрана
@@ -51,7 +51,7 @@ public static class GhostManager
         return position;
     }
 
-    public static void AddGhost() // Метод создания призраков
+    public static void AddGhost() // Создание призраков
     {
         Ghosts.Add(new(_texture, SetRandomPosition()));
     }
@@ -69,7 +69,7 @@ public static class GhostManager
         {
             g.Update(player);
         }
-        Ghosts.RemoveAll((g) => g.healthPoints <= 0); // Удаление всех призраков со здоровьем меньше ноля
+        Ghosts.RemoveAll((g) => g.healthPoints <= 0); // Удаление убитых призраков
     }
 
     public static void Draw()

@@ -8,6 +8,7 @@ public class Rifle : Weapon
         maxAmmo = 30;
         Ammo = maxAmmo;
         reloadTime = 2f;
+        baseDamage = 1; // урон винтовки
     }
 
     protected override void CreateProjectiles(Player player) // Создание снарядов для винтовки
@@ -18,7 +19,8 @@ public class Rifle : Weapon
             Rotation = player.Rotation, // Направление выстрела совпадает с направлением игрока
             Lifespan = 2f,
             Speed = 600,
-            Damage = 1
+            Damage = GetDamageWithLevelMultiplier(),
+            IsEnemyProjectile = false
         };
 
         ProjectileManager.AddProjectile(projectileData);

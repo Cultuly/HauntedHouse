@@ -27,8 +27,6 @@ public static class MenuManager
         _mediumButton = new Button("Средний", new Vector2(centerX, 300), _font, SelectMedium);
         _hardButton = new Button("Сложный", new Vector2(centerX, 350), _font, SelectHard);
         _startButton = new Button("Начать игру", new Vector2(centerX, 450), _font, StartGame);
-        
-        //_mediumButton.IsSelected = true;
     }
     
     private static void SelectEasy() // Метод выбора лёгкой сложности
@@ -69,13 +67,14 @@ public static class MenuManager
             CurrentState = GameState.InGame;
     }
     
-    public static void ReturnToMainMenu()
+    public static void ReturnToMainMenu() // Возвращает в главное меню
     {
         CurrentState = GameState.MainMenu;
     }
     
     public static void Update()
     {
+        // Обработка кнопок выыбора сложности если игрок в главном меню
         if (CurrentState == GameState.MainMenu)
         {
             _easyButton.Update();
@@ -87,7 +86,7 @@ public static class MenuManager
         if (Keyboard.GetState().IsKeyDown(Keys.Escape) && !InputManager.LastKeyboardState.IsKeyDown(Keys.Escape))
         {
             if (CurrentState == GameState.InGame || CurrentState == GameState.Paused)
-                TogglePause(); // При нажатии ESC открывается меню паузы
+                TogglePause(); // Менюшка паузы при нажатии ESC
         }
     }
     
@@ -95,12 +94,12 @@ public static class MenuManager
     {
         if (CurrentState == GameState.MainMenu)
         {
-            // Отрисовка названия в главном меню
+            // Отрисовка названия (главное меню)
             string title = "Haunted House";
             Vector2 titleSize = _font.MeasureString(title) * 1.5f;
             Globals.SpriteBatch.DrawString(_font, title, new Vector2(Globals.Bounds.X / 2 - titleSize.X / 2, 100), Color.White, 0, Vector2.Zero, 1.5f, SpriteEffects.None, 0);
                 
-            // Отрисовка меню выбора сложности
+            // Отрисовка выбора сложности
             string subtitle = "Выберите уровень сложности:";
             Vector2 subtitleSize = _font.MeasureString(subtitle);
             Globals.SpriteBatch.DrawString(_font, subtitle, new Vector2(Globals.Bounds.X / 2 - subtitleSize.X / 2, 175), Color.White, 0, Vector2.Zero, 1f, SpriteEffects.None, 0);
@@ -113,15 +112,15 @@ public static class MenuManager
         }
         else if (CurrentState == GameState.Paused)
         {
-            // Отрисовка экрана паузы (если нажат ESC)
+            // Отрисовка экрана паузы
             string pauseText = "ПАУЗА";
             Vector2 pauseSize = _font.MeasureString(pauseText) * 2f;
             Globals.SpriteBatch.DrawString(_font, pauseText, new Vector2(Globals.Bounds.X / 2 - pauseSize.X / 2, Globals.Bounds.Y / 2 - pauseSize.Y / 2), Color.White, 0, Vector2.Zero, 2f, SpriteEffects.None, 0);
             
-            // Отрисовка надписи продолжить (если игра в состоянии паузы)
+            // Отрисовка надписи продолжить
             string resumeText = "Нажмите ESC для продолжения";
             Vector2 resumeSize = _font.MeasureString(resumeText);
             Globals.SpriteBatch.DrawString(_font, resumeText, new Vector2(Globals.Bounds.X / 2 - resumeSize.X / 2, Globals.Bounds.Y / 2 + 50), Color.White, 0, Vector2.Zero, 1f, SpriteEffects.None, 0);
         }
     }
-} 
+}

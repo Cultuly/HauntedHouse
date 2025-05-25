@@ -21,6 +21,7 @@ public class Game1 : Game
         _graphics.ApplyChanges();
 
         Globals.Content = Content;
+        Globals.GraphicsDevice = GraphicsDevice;
         _gameManager = new();
 
         base.Initialize();
@@ -34,7 +35,7 @@ public class Game1 : Game
 
     protected override void Update(GameTime gameTime)
     {
-        // Выход из игры только если игра в состоянии паузы и нажат ESC
+        // Выход из игры (только если игра на паузе и нажат ESC)
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || 
             (Keyboard.GetState().IsKeyDown(Keys.Escape) && MenuManager.CurrentState == GameState.MainMenu))
             Exit();

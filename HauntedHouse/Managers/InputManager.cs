@@ -10,9 +10,11 @@ public static class InputManager
     public static Vector2 Direction => _direction;
     public static Vector2 MousePosition => Mouse.GetState().Position.ToVector2();
     public static bool MouseClicked { get; private set; } // Флаг клика ЛКМ
-    public static bool ReloadKeyPressed { get; private set; } // Флаг нажатия R
-    public static bool MouseLeftDown { get; private set; } // Зажатие ЛКМ
-    public static bool SpacePressed { get; private set; } // Обработка прожатия пробела
+    public static bool ReloadKeyPressed { get; private set; } // Флаг нажатия R (Для перезарядки)
+    public static bool MouseLeftDown { get; private set; } // Зажатие ЛКМ (Для стрельбы)
+    public static bool Weapon1Pressed { get; private set; } // Обработка нажатия клавиши 1 (Для смены оружия)
+    public static bool Weapon2Pressed { get; private set; } // Обработка нажатия клавиши 2 (Для смены оружия)
+    public static bool ThrowPoisonBottlePressed { get; private set; } // Флаг для броска бутылки с ядом
 
     public static void Update()
     {
@@ -23,7 +25,8 @@ public static class InputManager
         
         foreach (var key in keyboardState.GetPressedKeys())
         {
-            switch (key) // Обработка перемещения
+            // Обработка перемещения
+            switch (key)
             {
                 case Keys.W:
                     _direction.Y--; // Движение вверх
@@ -44,8 +47,11 @@ public static class InputManager
         MouseClicked = MouseLeftDown && (_lastMouseState.LeftButton == ButtonState.Released); // Обработка клика ЛКМ
         ReloadKeyPressed = keyboardState.IsKeyDown(Keys.R) && _lastKeyboardState.IsKeyUp(Keys.R); // Обработка клика R для перезарядки
 
-        SpacePressed = _lastKeyboardState.IsKeyUp(Keys.Space) && keyboardState.IsKeyDown(Keys.Space); // Обработка нажатия пробела
+        Weapon1Pressed = _lastKeyboardState.IsKeyUp(Keys.D1) && keyboardState.IsKeyDown(Keys.D1); // Обработка нажатия клавиши 1
+        Weapon2Pressed = _lastKeyboardState.IsKeyUp(Keys.D2) && keyboardState.IsKeyDown(Keys.D2); // Обработка нажатия клавиши 2
+        ThrowPoisonBottlePressed = _lastKeyboardState.IsKeyUp(Keys.Space) && keyboardState.IsKeyDown(Keys.Space); // Обработка броска бутылки с ядом (При нажатии на пробел)
 
+        // Хранит последние состояния клавиатуры и мыши
         _lastMouseState = mouseState;
         _lastKeyboardState = keyboardState;
     }

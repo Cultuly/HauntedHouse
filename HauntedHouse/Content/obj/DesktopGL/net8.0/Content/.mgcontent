@@ -7,7 +7,10 @@
     <File>C:/Users/Кирилл/Projects (C#)/2025/Monogame projects/HauntedHouse/HauntedHouse/Content/Bullet.png</File>
     <File>C:/Users/Кирилл/Projects (C#)/2025/Monogame projects/HauntedHouse/HauntedHouse/Content/Ectoplasm.png</File>
     <File>C:/Users/Кирилл/Projects (C#)/2025/Monogame projects/HauntedHouse/HauntedHouse/Content/Ghost.png</File>
+    <File>C:/Users/Кирилл/Projects (C#)/2025/Monogame projects/HauntedHouse/HauntedHouse/Content/GhostBullet.png</File>
     <File>C:/Users/Кирилл/Projects (C#)/2025/Monogame projects/HauntedHouse/HauntedHouse/Content/Player.png</File>
+    <File>C:/Users/Кирилл/Projects (C#)/2025/Monogame projects/HauntedHouse/HauntedHouse/Content/PoisonArea.png</File>
+    <File>C:/Users/Кирилл/Projects (C#)/2025/Monogame projects/HauntedHouse/HauntedHouse/Content/PoisonBottle.png</File>
     <File>C:/Users/Кирилл/Projects (C#)/2025/Monogame projects/HauntedHouse/HauntedHouse/Content/Score.spritefont</File>
     <File>C:/Users/Кирилл/Projects (C#)/2025/Monogame projects/HauntedHouse/HauntedHouse/Content/Tile 1.png</File>
     <File>C:/Users/Кирилл/Projects (C#)/2025/Monogame projects/HauntedHouse/HauntedHouse/Content/Tile 2.png</File>
@@ -16,6 +19,9 @@
     <File>C:/Users/Кирилл/Projects (C#)/2025/Monogame projects/HauntedHouse/HauntedHouse/Content/Tile 5.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

@@ -34,3 +34,6 @@ C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedH
 C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\obj\Debug\net8.0\ref\HauntedHouse.dll
 C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\bin\Debug\net8.0\Content\Ectoplasm.xnb
 C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\bin\Debug\net8.0\Content\Score.xnb
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\bin\Debug\net8.0\Content\GhostBullet.xnb
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\bin\Debug\net8.0\Content\PoisonArea.xnb
+C:\Users\Кирилл\Projects (C#)\2025\Monogame projects\HauntedHouse\HauntedHouse\bin\Debug\net8.0\Content\PoisonBottle.xnb

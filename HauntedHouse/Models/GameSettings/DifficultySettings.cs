@@ -33,23 +33,23 @@ public class DifficultySettings
         { DifficultyLevel.Hard, 0.6f }
     };
     
-    public static void SetDifficulty(DifficultyLevel difficulty) // Метод установки сложности
+    public static void SetDifficulty(DifficultyLevel difficulty) // Установки сложности
     {
         CurrentDifficulty = difficulty;
     }
     
-    public static float GetGhostSpeedMultiplier() // Метод для задания модификатора скорости
+    public static float GetGhostSpeedMultiplier() // Задаёт модификатор скорости
     {
         return GhostSpeedMultipliers[CurrentDifficulty];
     }
     
-    public static int GetGhostHealthPoints() // Метод для задания модификатора здоровья призраков 
+    public static int GetGhostHealthPoints() // Задаёт модификатор здоровья призраков 
     {
         return GhostHealthMultipliers[CurrentDifficulty];
     }
     
-    public static float GetGhostSpawnRateMultiplier() // Метод для задания модификатора спавна призраков
+    public static float GetGhostSpawnRateMultiplier() // Задаёт модификатор спавна призраков
     {
         return GhostSpawnRateMultipliers[CurrentDifficulty];
     }
-} 
+}
